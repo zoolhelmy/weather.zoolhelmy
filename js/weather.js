@@ -26,7 +26,7 @@ function setBanner() {
 }
 
 function getTimestamp() {
-	var url = 'https://api.github.com/repos/zoolhelmy/ESP8266-Weather-Station/commits?path=data/temperature.txt&page=1&per_page=1';
+	var url = 'https://api.github.com/repos/zoolhelmy/ESP8266-Weather-Station/commits?path=data/temperature2.txt&page=1&per_page=1';
 	
 	$.getJSON(url, function(data) {
 		var now = data[0].commit.committer.date;	
