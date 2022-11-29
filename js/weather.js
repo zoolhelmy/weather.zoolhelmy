@@ -36,16 +36,19 @@ function getTimestamp() {
 }
 
 function getGitHub() { 
-	var url_temperature = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/temperature.txt';
-	var url_temperature2 = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/temperature2.txt';
-	var url_feelslike = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/feelslike.txt';
-	var url_humid = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/humid.txt';
-	var url_uv = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/uv.txt';
-	var url_duv = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/duv.txt';
-	var url_press = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/press.txt';
-	var url_presssea = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/presssea.txt';
-	var url_alt = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/alt.txt';
-	var url_altreal = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data/altreal.txt';
+	var url_path = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data'; // github path
+//	var url_path = 'weather'; 									  // local path
+	
+	var url_temperature = url_path + '/temperature.txt';
+	var url_temperature2 = url_path + '/temperature2.txt';
+	var url_feelslike = url_path + '/feelslike.txt';
+	var url_humid = url_path + '/humid.txt';
+	var url_uv = url_path + '/uv.txt';
+	var url_duv = url_path + '/duv.txt';
+	var url_press = url_path + '/press.txt';
+	var url_presssea = url_path + '/presssea.txt';
+	var url_alt = url_path + '/alt.txt';
+	var url_altreal = url_path + '/altreal.txt';
 	
 	$.getJSON(url_temperature, function(data) { if (data) { $('#weather-temperature').text($('#weather-temperature').text().replace("0", data)); } });
 	$.getJSON(url_temperature2, function(data) { if (data) { $('#weather-temperature2').text($('#weather-temperature2').text().replace("0", data)); } });
