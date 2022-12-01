@@ -14,7 +14,30 @@ function setBanner() {
 		{src: 'img/6.jpg', href: '#link6'},
 		{src: 'img/7.jpg', href: '#link7'},
 		{src: 'img/8.jpg', href: '#link8'},
-		{src: 'img/9.jpg', href: '#link9'}
+		{src: 'img/9.jpg', href: '#link9'},
+		{src: 'img/9.jpg', href: '#link10'},
+		{src: 'img/9.jpg', href: '#link11'},
+		{src: 'img/9.jpg', href: '#link12'},
+		{src: 'img/9.jpg', href: '#link13'},
+		{src: 'img/9.jpg', href: '#link14'},
+		{src: 'img/9.jpg', href: '#link15'},
+		{src: 'img/9.jpg', href: '#link16'},
+		{src: 'img/9.jpg', href: '#link17'},
+		{src: 'img/9.jpg', href: '#link18'},
+		{src: 'img/9.jpg', href: '#link19'},
+		{src: 'img/9.jpg', href: '#link20'},
+		{src: 'img/9.jpg', href: '#link21'},
+		{src: 'img/9.jpg', href: '#link22'},
+		{src: 'img/9.jpg', href: '#link23'},
+		{src: 'img/9.jpg', href: '#link24'},
+		{src: 'img/9.jpg', href: '#link25'},
+		{src: 'img/9.jpg', href: '#link26'},
+		{src: 'img/9.jpg', href: '#link27'},
+		{src: 'img/9.jpg', href: '#link28'},
+		{src: 'img/9.jpg', href: '#link29'},
+		{src: 'img/9.jpg', href: '#link30'},
+		{src: 'img/9.jpg', href: '#link31'},
+		{src: 'img/9.jpg', href: '#link32'}
 	];
 	var random_image1 = images[Math.floor(Math.random() * images.length)];
 	var imgsrc1 = "url(" + random_image1.src + ")";
@@ -26,7 +49,7 @@ function setBanner() {
 }
 
 function getTimestamp() {
-	var url = 'https://api.github.com/repos/zoolhelmy/ESP8266-Weather-Station/commits?path=data/temperature2.txt&page=1&per_page=1';
+	var url = 'https://api.github.com/repos/zoolhelmy/ESP8266-Weather-Station/commits?path=data&page=1&per_page=1';
 	
 	$.getJSON(url, function(data) {
 		var now = data[0].commit.committer.date;	
