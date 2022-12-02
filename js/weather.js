@@ -40,12 +40,15 @@ function setBanner() {
 		{src: 'img/9.jpg', href: '#link31'},
 		{src: 'img/9.jpg', href: '#link32'}
 	];
+
+	var random_url = Math.floor(Math.random() * 1000);
+	
 	var random_image1 = images[Math.floor(Math.random() * images.length)];
-	var imgsrc1 = "url(" + random_image1.src + ")";
+	var imgsrc1 = "url(" + random_image1.src + "?rand=" + random_url + ")";
 	$(function(){ $('#background-banner1').css('background-image', imgsrc1); });
 	
 	var random_image2 = images[Math.floor(Math.random() * images.length)];
-	var imgsrc2 = "url(" + random_image2.src + ")";
+	var imgsrc2 = "url(" + random_image2.src + "?rand=" + random_url + ")";
 	$(function(){ $('#background-banner2').css('background-image', imgsrc2); });			
 }
 
@@ -88,10 +91,11 @@ function getGitHub() {
 
 function getWeatherIcon() {
 	var url = "https://api.openweathermap.org/data/2.5/weather?lat=12.98&lon=77.75&appid=0ffa69ca2cb7ddeb7dabbb345951e3a6";
+	var random_url = Math.floor(Math.random() * 1000);
 	
 	$.getJSON(url, function(data) { 
 		if (data) { 
-			$('#weather-icon').attr('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+			$('#weather-icon').attr('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png?rand=' + random_url);
 		} 
 	});
 }
