@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	setBanner();
 	getGitHub();
+	getWeatherIcon();
 	getTimestamp();
 });
 
@@ -85,3 +86,12 @@ function getGitHub() {
 	$.getJSON(url_altreal, function(data) { if (data) { $('#weather-altreal').text($('#weather-altreal').text().replace("0", data)); } });			
 }
 
+function getWeatherIcon() {
+	var url = "https://api.openweathermap.org/data/2.5/weather?lat=12.98&lon=77.75&appid=0ffa69ca2cb7ddeb7dabbb345951e3a6";
+	
+	$.getJSON(url, function(data) { 
+		if (data) { 
+			$('#weather-icon').attr('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+		} 
+	});
+}
