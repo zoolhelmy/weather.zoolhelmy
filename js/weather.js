@@ -95,6 +95,7 @@ function getWeatherIcon() {
 	
 	$.getJSON(url, function(data) { 
 		if (data) { 
+			$('#weather-icon').attr('title', data.weather[0].description);
 			$('#weather-icon').attr('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png?rand=' + random_url);
 		} 
 	});
