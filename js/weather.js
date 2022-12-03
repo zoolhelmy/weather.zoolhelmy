@@ -103,16 +103,16 @@ function getWeatherIcon() {
 
 function getWeatherIcon() {
  
-	var url = "https://api.openweathermap.org/data/2.5/weather?lat=12.98&lon=77.75&appid=0ffa69ca2cb7ddeb7dabbb345951e3a6";
-	// var url_icon = "https://openweathermap.org/img/w/";
-	var url_icon = "img/";
+	var url = "https://dataservice.accuweather.com/currentconditions/v1/193449?apikey=LsWAYsxXTunTaOP0I9bQWhmX9gVckRcp";
+	var url_icon = "img/weathericon/";
 	var random_url = Math.floor(Math.random() * 1000);
 	
 	$.getJSON(url, function(data) { 
 		if (data) { 
-			$('#weather-icon').attr('title', data.weather[0].description);
-			$('#weather-icon').attr('src', url_icon + data.weather[0].icon + '.png?rand=' + random_url);
-		} 
+			console.log(data[0].WeatherText);
+			$('#weather-icon').attr('title', data[0].WeatherText);
+			$('#weather-icon').attr('src', url_icon + data[0].WeatherIcon + '-s.png?rand=' + random_url);
+		}
 	});
  
 }
