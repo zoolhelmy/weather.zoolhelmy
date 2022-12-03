@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	setBanner();
-	getGitHub();
+	getWeatherData();
 	getWeatherIcon();
 	getTimestamp();
 });
@@ -62,7 +62,7 @@ function getTimestamp() {
 	});	
 }
 
-function getGitHub() { 
+function getWeatherData() { 
 	var url_path = 'https://raw.githubusercontent.com/zoolhelmy/ESP8266-Weather-Station/master/data'; // github path
 //	var url_path = 'weather'; 									  // local path
 	
@@ -99,4 +99,20 @@ function getWeatherIcon() {
 			$('#weather-icon').attr('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png?rand=' + random_url);
 		} 
 	});
+}
+
+function getWeatherIcon() {
+ 
+	var url = "https://api.openweathermap.org/data/2.5/weather?lat=12.98&lon=77.75&appid=0ffa69ca2cb7ddeb7dabbb345951e3a6";
+	// var url_icon = "https://openweathermap.org/img/w/";
+	var url_icon = "img/";
+	var random_url = Math.floor(Math.random() * 1000);
+	
+	$.getJSON(url, function(data) { 
+		if (data) { 
+			$('#weather-icon').attr('title', data.weather[0].description);
+			$('#weather-icon').attr('src', url_icon + data.weather[0].icon + '.png?rand=' + random_url);
+		} 
+	});
+ 
 }
