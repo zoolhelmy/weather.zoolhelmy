@@ -103,15 +103,15 @@ function getWeatherIcon() {
 
 function getWeatherIcon() {
  
-	var url = "https://dataservice.accuweather.com/currentconditions/v1/193449?apikey=LsWAYsxXTunTaOP0I9bQWhmX9gVckRcp";
+	var url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/hoskote?unitGroup=metric&include=current&key=R8JPDCUSQQ9G48WUBTFAHBNHT&contentType=json";
 	var url_icon = "img/weathericon/";
 	var random_url = Math.floor(Math.random() * 1000);
 	
 	$.getJSON(url, function(data) { 
 		if (data) { 
-			console.log(data[0].WeatherText);
-			$('#weather-icon').attr('title', data[0].WeatherText);
-			$('#weather-icon').attr('src', url_icon + data[0].WeatherIcon + '-s.png?rand=' + random_url);
+			console.log(data.currentConditions.icon);
+			$('#weather-icon').attr('title', data.currentConditions.conditions);
+			$('#weather-icon').attr('src', url_icon + data.currentConditions.icon + '.png?rand=' + random_url);
 		}
 	});
  
