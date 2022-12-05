@@ -109,7 +109,6 @@ function getWeatherIcon() {
 	
 	$.getJSON(url, function(data) { 
 		if (data) { 
-			console.log(data.currentConditions.icon);
 			$('#weather-icon').attr('title', data.currentConditions.conditions);
 			$('#weather-icon').attr('src', url_icon + data.currentConditions.icon + '.png?rand=' + random_url);
 		}
